@@ -10,6 +10,7 @@ public class TestButton : MonoBehaviour
     private void Start()
     {
         debugText.text = "Waiting for button press.";
+        Debug.Log("Waiting for button press");
     }
 
     private void Update()
@@ -17,11 +18,13 @@ public class TestButton : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.JoystickButton0))  // Doesn't work.
         {
             debugText.text = "The Confirm button has been pressed";
+            Debug.Log("The Confirm button has been pressed");
             StartCoroutine(StopDisplay());
         }
         else if (Input.GetKeyDown(KeyCode.Escape))      // Works well.
         {
             debugText.text = "The Return button has been pressed.";
+            Debug.Log("The Return button has been pressed");
             StartCoroutine(StopDisplay());
         }
     }
